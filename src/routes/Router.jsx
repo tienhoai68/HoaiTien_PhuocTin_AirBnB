@@ -2,7 +2,7 @@ import React from "react";
 import { useRoutes } from "react-router-dom";
 import HomeLayout from "../layouts/HomeLayout/HomeLayout";
 import Home from "../pages/Home/Home";
-import MovieDetail from "../pages/MovieDetail/MovieDetail";
+import PageNotFound from "../pages/PageNotFound/PageNotFound";
 
 export default function Router() {
   const routing = useRoutes([
@@ -14,12 +14,12 @@ export default function Router() {
           path: "/",
           element: <Home />,
         },
-        {
-          path: "/movie-detail/:movieId",
-          element: <MovieDetail />,
-        },
       ],
     },
+    {
+      path: "*",
+      element: <PageNotFound />
+    }
   ]);
 
   return routing;
